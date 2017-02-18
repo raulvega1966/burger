@@ -1,0 +1,59 @@
+<!-- Index.handlebars 
+from cats in classassignment-->
+
+<h1>BURGERS!</h1>
+
+<h2>Burgers Available! - Cats that are not sleepy!</h2>
+
+
+
+<ul>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">BURGER TIME (Put it on the table)!</button>
+        </form>
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+<h2>Burgers that have been eaten - Cats that are sleepy!</h2>
+<ul>
+  {{#each burgers}}
+    {{#if this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="burgers/delete/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">Put in the Menu - WAKE UP!</button>
+        </form>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+
+<h2>Add a burger - Add a Cat</h2>
+<form class="create-update-form" action="burgers/create" method="POST">
+
+  <div class="form-group">
+    <label for="burger">Burger Name:</label>
+    <input type="text" id="burger" name="burger_
+    name">
+  </div>
+
+  <div class="form-group">
+    <label for="eat">Where is burger - was it Devoured?</label><br>
+    <input type="radio" name="Devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="Devoured" value="0"> Not Eaten
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>

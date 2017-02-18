@@ -1,0 +1,36 @@
+body {
+
+    font-family: arial, "Helvetica Neue", Helvetica, "sans-serif";
+    line-height: 120%;
+    color: #777777;
+}
+
+
+p {
+    color: #777777;
+}
+
+
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #4aaaa5;
+}
+
+
+img {
+    float: left;
+    padding-right: 28px;
+}
+
+
+#footer {
+    font-size: 10px;
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background: #666666;
+}
