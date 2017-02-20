@@ -12,27 +12,24 @@ from cats in classassignment-->
       <li>
         {{this.burgername}}
 
-<form action="burger/update/{{this.id}}?_method=PUT" method="POST">
+		<form action="burger/update/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
           <button type="submit">BURGER TIME (Put it on the table)!</button>
         </form>
+
       </li>
     {{/unless}}
   {{/each}}
 </ul>
 
 
-<h2>Burgers that have been eaten!</h2>
+<h2>Burgers that have been eaten = DEVOURED!</h2>
 <ul>
   {{#each burger}}
     {{#if this.devoured}}
       <li>
         {{this.burgername}}
 
-        <form action="burger/delete/{{this.id}}?_method=DELETE" method="POST">
-          <input type="hidden" name="devoured" value="true">
-          <button type="submit">It has been devoured!</button>
-        </form>
       </li>
     {{/if}}
   {{/each}}
@@ -47,11 +44,11 @@ from cats in classassignment-->
     <input type="text" id="burger" name="burgername">
   </div>
 
-  <div class="form-group">
-    <label for="eat">Where is burger - was it Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Not Eaten
-  </div>
+
+
+
+
+
 
   <button type="submit">Add Burger</button>
 </form>

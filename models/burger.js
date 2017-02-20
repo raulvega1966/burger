@@ -18,13 +18,13 @@ var burger = {
             cb(res);
         });
     }
-
+/*
         delete: function(objColVals, condition, cb) {
         orm.delete("burger", condition, function(res) {
             cb(res);
         });
     }
-
+*/
 };
 
 // Export the database functions for the controller (catsController.js).
