@@ -3,17 +3,16 @@ from cats in classassignment-->
 
 <h1>BURGERS!</h1>
 
-<h2>Burgers Available! - Cats that are not sleepy!</h2>
-
+<h2>Burgers Available!</h2>
 
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#unless this.devoured}}
       <li>
-        {{this.burger_name}}
+        {{this.burgername}}
 
-<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+<form action="burger/update/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
           <button type="submit">BURGER TIME (Put it on the table)!</button>
         </form>
@@ -23,16 +22,16 @@ from cats in classassignment-->
 </ul>
 
 
-<h2>Burgers that have been eaten - Cats that are sleepy!</h2>
+<h2>Burgers that have been eaten!</h2>
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#if this.devoured}}
       <li>
-        {{this.burger_name}}
+        {{this.burgername}}
 
-        <form action="burgers/delete/{{this.id}}?_method=PUT" method="POST">
+        <form action="burger/delete/{{this.id}}?_method=DELETE" method="POST">
           <input type="hidden" name="devoured" value="true">
-          <button type="submit">Put in the Menu - WAKE UP!</button>
+          <button type="submit">It has been devoured!</button>
         </form>
       </li>
     {{/if}}
@@ -40,19 +39,18 @@ from cats in classassignment-->
 </ul>
 
 
-<h2>Add a burger - Add a Cat</h2>
-<form class="create-update-form" action="burgers/create" method="POST">
+<h2>Add a burger</h2>
+<form class="create-update-form" action="burger/create" method="POST">
 
   <div class="form-group">
     <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="burger_
-    name">
+    <input type="text" id="burger" name="burgername">
   </div>
 
   <div class="form-group">
     <label for="eat">Where is burger - was it Devoured?</label><br>
-    <input type="radio" name="Devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="Devoured" value="0"> Not Eaten
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Not Eaten
   </div>
 
   <button type="submit">Add Burger</button>
